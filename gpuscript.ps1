@@ -1,7 +1,10 @@
 $gpus = Get-WmiObject Win32_VideoController
+$gpu
 
-foreach($gpu in $gpus) {
-    if ($gpu.name.toLower().contains("rtx") -Or $gpu.name.toLower().contains("gtx") -Or $gpu.name.toLower().contains("rx")) {
-        $gpu.name
+foreach($a in $gpus) {
+    if ($a.name.toLower().contains("rtx") -Or $a.name.toLower().contains("gtx") -Or $a.name.toLower().contains("rx")) {
+        $gpu = $a.name
     }
 }
+
+$gpu
